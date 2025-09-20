@@ -1,0 +1,1 @@
+# install-facefusion-vast-ai
