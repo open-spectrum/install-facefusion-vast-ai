@@ -1,4 +1,4 @@
 # install-facefusion-vast-ai
 ```
-cd ps
+wget https://github.com/open-spectrum/install-facefusion-vast-ai/blob/main/installation.sh && chmod +x installation.sh && ./installation.sh
 ```
