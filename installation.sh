@@ -16,9 +16,5 @@ conda init --all
 conda create --name facefusion python=3.12 pip=25.0
 conda activate facefusion
 conda install -y nvidia/label/cuda-12.9.1::cuda-runtime nvidia/label/cudnn-9.10.0::cudnn 
-git clone https://github.com/open-spectrum/facefusion-nsfw-bypass.git
-cd facefusion-nsfw-bypass
-python install.py --onnxruntime cuda
-conda deactivate
-conda activate facefusion
-python facefusion.py run 
+git clone https://github.com/open-spectrum/facefusion_erfix.git
+
