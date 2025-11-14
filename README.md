@@ -4,5 +4,13 @@ wget https://raw.githubusercontent.com/open-spectrum/install-facefusion-vast-ai/
 ```
 
 ```
+python install.py --onnxruntime cuda
+conda deactivate
+conda activate facefusion
+python facefusion.py run 
+
+```
+
+```
 cloudflared tunnel --url 127.0.0.1:7860
 ```
