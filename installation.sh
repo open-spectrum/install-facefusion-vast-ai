@@ -7,21 +7,20 @@ apt install ffmpeg -y
 
 sudo mkdir -p --mode=0755 /usr/share/keyrings
 curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
-
 echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main" | sudo tee /etc/apt/sources.list.d/cloudflared.list
-
 sudo apt-get update && sudo apt-get install cloudflared
 
-exec bash
-
-conda init --all
 conda create --name facefusion python=3.12 pip=25.0
 conda activate facefusion
-exec bash
 conda install -y nvidia/label/cuda-12.9.1::cuda-runtime nvidia/label/cudnn-9.10.0::cudnn 
 git clone https://github.com/open-spectrum/facefusion_erfix.git
 cd facefusion_erfix
 unzip facezip.zip
-cd facezip
+
+python install.py --onnxruntime cuda
+conda deactivate
+conda activate facefusion
+python facefusion.py run 
+
 
 
