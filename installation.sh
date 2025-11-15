@@ -12,9 +12,16 @@ echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudf
 
 sudo apt-get update && sudo apt-get install cloudflared
 
+exec bash
+
 conda init --all
 conda create --name facefusion python=3.12 pip=25.0
 conda activate facefusion
+exec bash
 conda install -y nvidia/label/cuda-12.9.1::cuda-runtime nvidia/label/cudnn-9.10.0::cudnn 
 git clone https://github.com/open-spectrum/facefusion_erfix.git
+cd facefusion_erfix
+unzip facezip.zip
+cd facezip
+
 
